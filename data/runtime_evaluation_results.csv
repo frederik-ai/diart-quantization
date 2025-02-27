@@ -1,0 +1,9 @@
+model,baseline,ptdq_int8,ptdq_linear_int8,ptdq_conv1d_int8,ptdq_conv2d_int8,ptdq_conv_int8,ptdq_linear_conv_int8,ptdq_lstm_int8,ptdq_conv_lstm_linear_int8,ptsq_int8
+pyannote/segmentation,62.09,60.34,60.79,63.79,66.07,68.71,67.99,140.75,147.66,
+pyannote/segmentation-3.0,98.18,64.49,62.62,64.59,67.57,67.9,65.07,163.81,198.68,
+pyannote/embedding,61.07,57.95,55.5,76.91,51.91,47.62,44.84,59.88,46.38,
+pyannote/wespeaker-voxceleb-resnet34-LM,406.79,383.4,402.87,371.78,387.76,377.6,358.59,353.39,359.32,
+speechbrain/spkrec-xvect-voxceleb,55.29,55.3,55.01,57.58,57.61,51.93,65.49,108.01,65.51,
+speechbrain/spkrec-ecapa-voxceleb,364.77,366.81,323.05,368.23,384.8,363.26,372.74,368.68,375.3,
+speechbrain/spkrec-ecapa-voxceleb-mel-spec,243.48,231.17,268.1,292.42,214.96,224.31,252.26,229.09,238.17,
+speechbrain/spkrec-resnet-voxceleb,2106.7,2008.59,1984.26,2210.51,2204.86,2236.16,2217.65,2213.02,2212.14,

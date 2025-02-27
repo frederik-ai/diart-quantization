@@ -1,0 +1,76 @@
+EncoderClassifier(
+  (mods): ModuleDict(
+    (compute_features): Fbank(
+      (compute_STFT): STFT()
+      (compute_fbanks): Filterbank()
+      (compute_deltas): Deltas()
+      (context_window): ContextWindow()
+    )
+    (mean_var_norm): InputNormalization()
+    (embedding_model): Xvector(
+      (blocks): ModuleList(
+        (0): Conv1d(
+          (conv): Conv1d(24, 512, kernel_size=(5,), stride=(1,))
+        )
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): BatchNorm1d(
+          (norm): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (3): Conv1d(
+          (conv): Conv1d(512, 512, kernel_size=(3,), stride=(1,), dilation=(2,))
+        )
+        (4): LeakyReLU(negative_slope=0.01)
+        (5): BatchNorm1d(
+          (norm): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (6): Conv1d(
+          (conv): Conv1d(512, 512, kernel_size=(3,), stride=(1,), dilation=(3,))
+        )
+        (7): LeakyReLU(negative_slope=0.01)
+        (8): BatchNorm1d(
+          (norm): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (9): Conv1d(
+          (conv): Conv1d(512, 512, kernel_size=(1,), stride=(1,))
+        )
+        (10): LeakyReLU(negative_slope=0.01)
+        (11): BatchNorm1d(
+          (norm): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (12): Conv1d(
+          (conv): Conv1d(512, 1500, kernel_size=(1,), stride=(1,))
+        )
+        (13): LeakyReLU(negative_slope=0.01)
+        (14): BatchNorm1d(
+          (norm): BatchNorm1d(1500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (15): StatisticsPooling()
+        (16): Linear(
+          (w): Linear(in_features=3000, out_features=512, bias=True)
+        )
+      )
+    )
+    (mean_var_norm_emb): InputNormalization()
+    (classifier): Classifier(
+      (act): LeakyReLU(negative_slope=0.01)
+      (norm): BatchNorm1d(
+        (norm): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (DNN): Sequential(
+        (block_0): Sequential(
+          (linear): Linear(
+            (w): Linear(in_features=512, out_features=512, bias=True)
+          )
+          (act): LeakyReLU(negative_slope=0.01)
+          (norm): BatchNorm1d(
+            (norm): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+      )
+      (out): Linear(
+        (w): Linear(in_features=512, out_features=7205, bias=True)
+      )
+      (softmax): Softmax()
+    )
+  )
+)

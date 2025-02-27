@@ -1,0 +1,23 @@
+Embedding model,Segmentation model,Quantization method,DER,JER,Latency,DER efficiency,JER efficiency
+pyannote/embedding,pyannote/segmentation,none,36.30210199843661,52.1609315362754,0.1712511221784356,16.085508750928238,11.194926205772248
+pyannote/embedding,pyannote/segmentation,dynamic,36.2977825677228,52.12943750740068,0.1655447558873886,16.641960139047747,11.587814477033389
+pyannote/embedding,pyannote/segmentation,static,36.99377113036865,54.01582194258163,0.1690002002466674,15.994997458564066,10.95448063054443
+pyannote/embedding,pyannote/segmentation-3.0,none,34.56537267434515,49.107679975919886,0.1562842172137678,18.511586234187583,13.029731343279272
+pyannote/embedding,pyannote/segmentation-3.0,dynamic,34.564737783147265,49.10657686142015,0.1659404134768329,17.434703480452796,12.2717972346026
+pyannote/embedding,pyannote/segmentation-3.0,static,36.00795287460916,50.06444490217628,0.1860711443666878,14.925281805681829,10.73474089145231
+pyannote/wespeaker-voxceleb-resnet34-LM,pyannote/segmentation,none,36.98407824695073,52.24220108797428,1.0319027191482255,2.6202724092964726,1.8549823283777058
+pyannote/wespeaker-voxceleb-resnet34-LM,pyannote/segmentation,dynamic,,,1.0395757872345084,,
+pyannote/wespeaker-voxceleb-resnet34-LM,pyannote/segmentation-3.0,none,31.509724809512264,45.30282686675879,1.010608395093368,3.1403097539531144,2.1841969476808774
+pyannote/wespeaker-voxceleb-resnet34-LM,pyannote/segmentation-3.0,dynamic,,,0.997619540622551,,
+speechbrain/spkrec-xvect-voxceleb,pyannote/segmentation,none,46.198867387320334,55.36791880608612,0.1702758521342614,12.712050489630826,10.606906444293159
+speechbrain/spkrec-xvect-voxceleb,pyannote/segmentation,dynamic,,,0.1645416328210076,,
+speechbrain/spkrec-xvect-voxceleb,pyannote/segmentation-3.0,none,43.974353272756154,61.42499432919656,0.1793194766711933,12.681571545916107,9.07877832637875
+speechbrain/spkrec-xvect-voxceleb,pyannote/segmentation-3.0,dynamic,,,0.1550218002565292,,
+speechbrain/spkrec-ecapa-voxceleb,pyannote/segmentation,none,36.61468552461413,52.53249387995945,0.8201972409146947,3.329863167020247,2.320885297755754
+speechbrain/spkrec-ecapa-voxceleb,pyannote/segmentation,dynamic,,,0.8404168799277278,,
+speechbrain/spkrec-ecapa-voxceleb,pyannote/segmentation-3.0,none,35.96646674167433,50.2222406024156,0.900256520439266,3.0884171009279853,2.2117581695389736
+speechbrain/spkrec-ecapa-voxceleb,pyannote/segmentation-3.0,dynamic,,,0.7886407597696617,,
+speechbrain/spkrec-resnet-voxceleb,pyannote/segmentation,none,38.52582307035179,57.15127781975043,4.850997946489849,0.5350778623817004,0.3606973604333918
+speechbrain/spkrec-resnet-voxceleb,pyannote/segmentation,dynamic,,,5.291843765442866,,
+speechbrain/spkrec-resnet-voxceleb,pyannote/segmentation-3.0,none,39.08370063803143,55.25683637732255,5.014966983238026,0.5101950535685252,0.3608659497716046
+speechbrain/spkrec-resnet-voxceleb,pyannote/segmentation-3.0,dynamic,,,5.157495790040818,,

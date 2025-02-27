@@ -1,0 +1,177 @@
+MelSpectrogramEncoder(
+  (mods): ModuleDict(
+    (normalizer): InputNormalization()
+    (embedding_model): ECAPA_TDNN(
+      (blocks): ModuleList(
+        (0): TDNNBlock(
+          (conv): Conv1d(
+            (conv): Conv1d(80, 1024, kernel_size=(5,), stride=(1,))
+          )
+          (activation): ReLU()
+          (norm): BatchNorm1d(
+            (norm): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): SERes2NetBlock(
+          (tdnn1): TDNNBlock(
+            (conv): Conv1d(
+              (conv): Conv1d(1024, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (activation): ReLU()
+            (norm): BatchNorm1d(
+              (norm): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (res2net_block): Res2NetBlock(
+            (blocks): ModuleList(
+              (0-6): 7 x TDNNBlock(
+                (conv): Conv1d(
+                  (conv): Conv1d(128, 128, kernel_size=(3,), stride=(1,), dilation=(2,))
+                )
+                (activation): ReLU()
+                (norm): BatchNorm1d(
+                  (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                )
+              )
+            )
+          )
+          (tdnn2): TDNNBlock(
+            (conv): Conv1d(
+              (conv): Conv1d(1024, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (activation): ReLU()
+            (norm): BatchNorm1d(
+              (norm): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (se_block): SEBlock(
+            (conv1): Conv1d(
+              (conv): Conv1d(1024, 128, kernel_size=(1,), stride=(1,))
+            )
+            (relu): ReLU(inplace=True)
+            (conv2): Conv1d(
+              (conv): Conv1d(128, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (sigmoid): Sigmoid()
+          )
+        )
+        (2): SERes2NetBlock(
+          (tdnn1): TDNNBlock(
+            (conv): Conv1d(
+              (conv): Conv1d(1024, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (activation): ReLU()
+            (norm): BatchNorm1d(
+              (norm): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (res2net_block): Res2NetBlock(
+            (blocks): ModuleList(
+              (0-6): 7 x TDNNBlock(
+                (conv): Conv1d(
+                  (conv): Conv1d(128, 128, kernel_size=(3,), stride=(1,), dilation=(3,))
+                )
+                (activation): ReLU()
+                (norm): BatchNorm1d(
+                  (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                )
+              )
+            )
+          )
+          (tdnn2): TDNNBlock(
+            (conv): Conv1d(
+              (conv): Conv1d(1024, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (activation): ReLU()
+            (norm): BatchNorm1d(
+              (norm): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (se_block): SEBlock(
+            (conv1): Conv1d(
+              (conv): Conv1d(1024, 128, kernel_size=(1,), stride=(1,))
+            )
+            (relu): ReLU(inplace=True)
+            (conv2): Conv1d(
+              (conv): Conv1d(128, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (sigmoid): Sigmoid()
+          )
+        )
+        (3): SERes2NetBlock(
+          (tdnn1): TDNNBlock(
+            (conv): Conv1d(
+              (conv): Conv1d(1024, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (activation): ReLU()
+            (norm): BatchNorm1d(
+              (norm): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (res2net_block): Res2NetBlock(
+            (blocks): ModuleList(
+              (0-6): 7 x TDNNBlock(
+                (conv): Conv1d(
+                  (conv): Conv1d(128, 128, kernel_size=(3,), stride=(1,), dilation=(4,))
+                )
+                (activation): ReLU()
+                (norm): BatchNorm1d(
+                  (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+                )
+              )
+            )
+          )
+          (tdnn2): TDNNBlock(
+            (conv): Conv1d(
+              (conv): Conv1d(1024, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (activation): ReLU()
+            (norm): BatchNorm1d(
+              (norm): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+          (se_block): SEBlock(
+            (conv1): Conv1d(
+              (conv): Conv1d(1024, 128, kernel_size=(1,), stride=(1,))
+            )
+            (relu): ReLU(inplace=True)
+            (conv2): Conv1d(
+              (conv): Conv1d(128, 1024, kernel_size=(1,), stride=(1,))
+            )
+            (sigmoid): Sigmoid()
+          )
+        )
+      )
+      (mfa): TDNNBlock(
+        (conv): Conv1d(
+          (conv): Conv1d(3072, 3072, kernel_size=(1,), stride=(1,))
+        )
+        (activation): ReLU()
+        (norm): BatchNorm1d(
+          (norm): BatchNorm1d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (asp): AttentiveStatisticsPooling(
+        (tdnn): TDNNBlock(
+          (conv): Conv1d(
+            (conv): Conv1d(9216, 128, kernel_size=(1,), stride=(1,))
+          )
+          (activation): ReLU()
+          (norm): BatchNorm1d(
+            (norm): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (tanh): Tanh()
+        (conv): Conv1d(
+          (conv): Conv1d(128, 3072, kernel_size=(1,), stride=(1,))
+        )
+      )
+      (asp_bn): BatchNorm1d(
+        (norm): BatchNorm1d(6144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (fc): Conv1d(
+        (conv): Conv1d(6144, 192, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+)

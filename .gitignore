@@ -1,0 +1,8 @@
+tokens.env
+**Zone.Identifier
+AMI-diart/
+quantized_models/
+slurm-*.out
+**/__pycache__/
+old/
+lightning_logs/

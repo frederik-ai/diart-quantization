@@ -1,0 +1,42 @@
+BidirectionalQuantWrapper(
+  (quant): Quantize(scale=tensor([0.0157]), zero_point=tensor([64]), dtype=torch.quint8)
+  (dequant): DeQuantize()
+  (module): XVectorSincNet(
+    (sincnet): SincNet(
+      (wav_norm1d): QuantizedInstanceNorm1d(1, eps=1e-05, momentum=True, affine=False, track_running_stats=False)
+      (conv1d): ModuleList(
+        (0): Encoder(
+          (filterbank): ParamSincFB()
+        )
+        (1): QuantizedConv1d(80, 60, kernel_size=(5,), stride=(1,), scale=18.212656021118164, zero_point=89)
+        (2): QuantizedConv1d(60, 60, kernel_size=(5,), stride=(1,), scale=10.249654769897461, zero_point=72)
+      )
+      (pool1d): ModuleList(
+        (0-2): 3 x MaxPool1d(kernel_size=3, stride=3, padding=0, dilation=1, ceil_mode=False)
+      )
+      (norm1d): ModuleList(
+        (0): QuantizedInstanceNorm1d(80, eps=1e-05, momentum=True, affine=False, track_running_stats=False)
+        (1-2): 2 x QuantizedInstanceNorm1d(60, eps=1e-05, momentum=True, affine=False, track_running_stats=False)
+      )
+    )
+    (tdnns): ModuleList(
+      (0): QuantizedConv1d(60, 512, kernel_size=(5,), stride=(1,), scale=3.6642558574676514, zero_point=76)
+      (1): QuantizedLeakyReLU(negative_slope=0.01)
+      (2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): QuantizedConv1d(512, 512, kernel_size=(3,), stride=(1,), scale=13.510244369506836, zero_point=81, dilation=(2,))
+      (4): QuantizedLeakyReLU(negative_slope=0.01)
+      (5): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): QuantizedConv1d(512, 512, kernel_size=(3,), stride=(1,), scale=10.539815902709961, zero_point=73, dilation=(3,))
+      (7): QuantizedLeakyReLU(negative_slope=0.01)
+      (8): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (9): QuantizedConv1d(512, 512, kernel_size=(1,), stride=(1,), scale=5.511614799499512, zero_point=79)
+      (10): QuantizedLeakyReLU(negative_slope=0.01)
+      (11): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (12): QuantizedConv1d(512, 1500, kernel_size=(1,), stride=(1,), scale=6.491861343383789, zero_point=84)
+      (13): QuantizedLeakyReLU(negative_slope=0.01)
+      (14): BatchNorm1d(1500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (stats_pool): StatsPool()
+    (embedding): QuantizedLinear(in_features=3000, out_features=512, scale=2.786804437637329, zero_point=67, qscheme=torch.per_channel_affine)
+  )
+)
