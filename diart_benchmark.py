@@ -157,12 +157,7 @@ if __name__ == "__main__":
     evaluation_metrics = [EVALUATION_METRIC] if EVALUATION_METRIC else [EvaluationMetric.DER, EvaluationMetric.JER]
     
     for segmentation_model_name in segmentation_models:
-        # all_embedding_models.remove("pyannote/embedding") # TODO: REMOVE
-        # all_embedding_models.remove("pyannote/wespeaker-voxceleb-resnet34-LM") # TODO: REMOVE
-        # all_embedding_models.remove("speechbrain/spkrec-xvect-voxceleb") # TODO: REMOVE
-        # all_embedding_models.remove("speechbrain/spkrec-ecapa-voxceleb") # TODO: REMOVE
         for embedding_model_name in embedding_models:
-        # for embedding_model_name in speechbrain_embedding_models:
             print(f"Segmentation model: {segmentation_model_name} [quantization: {SEGMENTATION_QUANT.value}], Embedding model: {embedding_model_name} [quantization: {EMBEDDING_QUANT.value}]")
             
             segmentation_model_diart = SegmentationModel.from_pretrained(segmentation_model_name)
@@ -245,7 +240,6 @@ if __name__ == "__main__":
                 **AMI_DIART_HYPERPARAMS
             )
             benchmark.batch_size = batch_size
-            # benchmark.batch_size = 4 # TODO: REMOVE
             
             if EvaluationMetric.DER in evaluation_metrics and not os.path.exists(der_benchmark_path):
                 diarization_error_rate = DiarizationErrorRate()
