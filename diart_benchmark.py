@@ -63,7 +63,6 @@ def get_benchmark_path(embedding_model_name, segmentation_model_name, benchmark_
     benchmark_path = f"{benchmark_directory}/{evaluation_metric}_{embedding_model_name_without_slash}"
     if embedding_model_suffix:
         benchmark_path += f"_{embedding_model_suffix}"
-    benchmark_path += "_lr1e-6" # TODO: remove this
     benchmark_path += ".csv"
     return benchmark_path
 
@@ -188,7 +187,7 @@ if __name__ == "__main__":
                                                                           batch_size=STATIC_QUANTIZATION_BATCH_SIZE)
                 set_pyannote_segmentation_model(segmentation_model_diart, segmentation_model_qat)
             if EMBEDDING_QUANT == QuantizationMethod.STATIC_QAT:
-                raise ValueError("Quantization Aware Training is currently only supported for the segmentation model. Please choose a different quantization method for the embedding model.")
+                raise ValueError("Quantization Aware Training is currently only supported for the embedding model. Please choose a different quantization method for the embedding model.")
                 
             # Static quantization
             if SEGMENTATION_QUANT == QuantizationMethod.STATIC or EMBEDDING_QUANT == QuantizationMethod.STATIC:
