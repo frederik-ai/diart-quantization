@@ -268,7 +268,7 @@ if __name__ == "__main__":
                 pipeline = SpeakerDiarization(config)
                 pipeline_runtimes = []
 
-                for test_file in os.listdir("AMI-diart/audio_files/calibration")[:3]:
+                for test_file in os.listdir("AMI-diart/audio_files/calibration"):
                     audio_path = f"AMI-diart/audio_files/calibration/{test_file}"
                     audio_source = FileAudioSource(audio_path, sample_rate=audio_sample_rate)
                     streaming_inference = StreamingInference(pipeline, audio_source, batch_size=1)
