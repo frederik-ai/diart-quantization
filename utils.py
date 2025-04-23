@@ -49,9 +49,10 @@ def load_random_ami_data_samples(split="test", num_samples=16, audio_duration=5)
       samples[num_samples - 1] = audio_segment
       num_samples -= 1
    return samples
-   
-   for i in range(num_samples):
-      audio_file = next(data)['audio']
-      audio_segment = load_random_audio_segment(audio_file, audio_duration)
-      samples[i] = audio_segment
-   return samples
+
+   # Old code that could only return as many sampels as there are audio files in the split
+   # for i in range(num_samples):
+   #    audio_file = next(data)['audio']
+   #    audio_segment = load_random_audio_segment(audio_file, audio_duration)
+   #    samples[i] = audio_segment
+   # return samples
