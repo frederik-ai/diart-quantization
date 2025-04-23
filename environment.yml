@@ -214,4 +214,3 @@ dependencies:
       - websocket-server==0.6.4
       - xxhash==3.5.0
       - yarl==1.18.0
-prefix: /home/frederik/miniconda3/envs/diart
